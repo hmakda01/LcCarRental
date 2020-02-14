@@ -17,10 +17,10 @@ public partial class StaffViewer : System.Web.UI.Page
         //display the 
         Response.Write(AStaff.StaffFirstName);
         Response.Write(AStaff.StaffLastName);
-        //Response.Write(AStaff.StaffEmail);
-       // Response.Write(AStaff.StaffTelephone);
-        //Response.Write(AStaff.StaffDateOfBirth);
-        //Response.Write(AStaff.Active);
+        Response.Write(AStaff.StaffEmail);
+        Response.Write(AStaff.StaffTelephone);
+        Response.Write(AStaff.StaffDateOfBirth);
+        Response.Write(AStaff.Active);
 
     }
 }
