@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Order1.1.cs" />
     <Compile Include="StaffTest.cs" />
     <Compile Include="tstStaffCollection.cs" />
     <Compile Include="UnitTest1.cs" />
