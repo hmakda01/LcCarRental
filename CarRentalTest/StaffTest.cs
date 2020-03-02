@@ -7,10 +7,7 @@ namespace CarRentalTest
     [TestClass]
     public class StaffTest
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+
         [TestMethod]
         public void InstanceOk()
         {
@@ -19,16 +16,16 @@ namespace CarRentalTest
             Assert.IsNotNull(AStaff);
         }
 
+        
         [TestMethod]
-        public void ActivePropertyOk()
+        public void StaffId()
         {
             clsStaff AStaff = new clsStaff();
-            //cretae some test data
-            Boolean TestData = true;
-            //assignthr  dta to the property
-            AStaff.Active = TestData;
-            //test to see the tewo values are the same
-            Assert.AreEqual(AStaff.Active, TestData);
+            Int32 TestData = 1;
+            //assgn the data to the property
+            AStaff.StaffId = TestData;
+            //applythe test
+            Assert.AreEqual(AStaff.StaffId, TestData);
         }
 
         [TestMethod]
@@ -56,7 +53,6 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-
         public void StaffEmail()
         {
             clsStaff AStaff = new clsStaff();
@@ -68,6 +64,7 @@ namespace CarRentalTest
             Assert.AreEqual(AStaff.StaffEmail, TestData);
         }
 
+        [TestMethod]
         public void StaffTelephone()
         {
             clsStaff AStaff = new clsStaff();
@@ -91,7 +88,7 @@ namespace CarRentalTest
             Assert.AreEqual(AStaff.StaffDateOfBirth, TestData);
         }
 
-
+        
 
 
     }

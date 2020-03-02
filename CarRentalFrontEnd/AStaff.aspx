@@ -21,10 +21,10 @@
          <asp:TextBox ID="txtStaffEmail" runat="server" style="position: relative; top: 182px; left: 145px"></asp:TextBox>
         <asp:TextBox ID="txtTelephone" runat="server" style="z-index: 1; left: 183px; top: 258px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtStaffDateOfBirth" runat="server" style="z-index: 1; left: 178px; top: 305px; position: absolute"></asp:TextBox>
-       
         <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 165px; top: 385px; position: absolute; height: 25px; width: 50px;" Text="Ok" OnClick="btnOk_Click" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 58px; top: 361px; position: absolute"></asp:Label>
-        <asp:CheckBox ID="CheckBoxActive" runat="server" style="z-index: 1; left: 56px; top: 336px; position: absolute" Text="Active" />
+        <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 56px; top: 72px; position: absolute" Text="Staff Id"></asp:Label>
+        <asp:TextBox ID="txtStaffId" runat="server" style="z-index: 1; left: 136px; top: 71px; position: absolute"></asp:TextBox>
     </form>
 </body>
 </html>

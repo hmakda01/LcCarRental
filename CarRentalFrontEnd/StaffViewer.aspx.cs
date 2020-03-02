@@ -15,12 +15,13 @@ public partial class StaffViewer : System.Web.UI.Page
         //get tyhe data form the session object
         AStaff = (clsStaff)Session[ "AStaff"];
         //display the 
+        Response.Write(AStaff.StaffId);
         Response.Write(AStaff.StaffFirstName);
         Response.Write(AStaff.StaffLastName);
         Response.Write(AStaff.StaffEmail);
         Response.Write(AStaff.StaffTelephone);
         Response.Write(AStaff.StaffDateOfBirth);
-        Response.Write(AStaff.Active);
+    
 
     }
 }
