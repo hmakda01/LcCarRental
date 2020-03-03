@@ -88,7 +88,158 @@ namespace CarRentalTest
             Assert.AreEqual(AStaff.StaffDateOfBirth, TestData);
         }
 
-        
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //create some test data to use
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //test to see if the result is ok
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestStaffIdFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffId != 19)
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestStaffFirstNameFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffFirstName !=  "Test FirstName")
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestStaffLastNameFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffLastName != "Test LastName")
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestStaffEmailFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffEmail != "Test email")
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestStaffTelephoneFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffTelephone != 0116354763)
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestStaffDateOfBirthFound()
+        {
+            //create an intance of the class
+            clsStaff AStaff = new clsStaff();
+            //boolean varaubel ti stroe thge result of the validation
+            Boolean Found = false;
+            //boolea variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffId = 19;
+            //invoke the method
+            Found = AStaff.Find(StaffId);
+            //check the staffid
+            if (AStaff.StaffDateOfBirth != Convert.ToDateTime("16/09/1998"))
+            {
+                OK = false;
+            }
+            //test to see if tis ok
+            Assert.IsTrue(OK);
+
+        }
 
 
     }
