@@ -21,5 +21,10 @@ namespace CarRentalClasses
         {
             throw new NotImplementedException();
         }
+
+        public void Find(object carID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

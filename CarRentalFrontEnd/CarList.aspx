@@ -18,7 +18,7 @@
         <asp:TextBox ID="tctCNSearch" runat="server" style="z-index: 1; left: 84px; top: 382px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1; left: 156px; top: 423px; position: absolute" Text="Display All" />
         <asp:Label ID="lblCNSearch" runat="server" style="z-index: 1; left: 83px; top: 351px; position: absolute" Text="Please enter a car name"></asp:Label>
-        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 417px; top: 387px; position: absolute; width: 53px;" Text="Edit" />
+        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 417px; top: 387px; position: absolute; width: 53px;" Text="Edit" OnClick="btnEdit_Click" />
     </form>
 </body>
 </html>

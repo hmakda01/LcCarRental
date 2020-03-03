@@ -19,9 +19,6 @@ namespace CarRentalTest
         }
      
 
-
-
-
         [TestMethod]
         public void CarNamePropertyOK()
         {

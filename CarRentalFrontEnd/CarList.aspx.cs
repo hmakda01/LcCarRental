@@ -7,14 +7,22 @@ using System.Web.UI.WebControls;
 
 public partial class CarList : System.Web.UI.Page
 {
+    Int32 CarID;
     //this function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
         //if this is the first time the page is displayed
+        CarID = Convert.ToInt32(Session["CarID"]);
         if (IsPostBack == false)
         {
             //update the list 
             DisplayCars();
+            //if this new record
+            if (CarID != -1)
+            {
+                //display the current data for the record
+                DisplayCars();
+            }
         }
     }
 
@@ -56,6 +64,28 @@ public partial class CarList : System.Web.UI.Page
         {
             //display an error
             lblError.Text = "Please select a record to delete from the list";
+        }
+    }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be edited
+        Int32 CarID;
+        //if a record has been selected from the list
+        if (lstCars.SelectedIndex != -1)
+        {
+            //get the prim key value of the record to edit
+            CarID = Convert.ToInt32(lstCars.SelectedValue);
+            //store the data in the session object
+            Session["CarID"] = CarID;
+            //redirect to the edit page
+            Response.Redirect("Car.aspx");
+        }
+        else
+        //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to Edit from the list";
         }
     }
 }
