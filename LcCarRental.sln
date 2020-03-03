@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarRentalFrontEnd", "CarRentalFrontEnd\", "{168F667B-2A64-4F69-ACD8-C5B5D8D77652}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{05cdf6f7-b5d5-4a26-a290-e5c087b42f5c}|CarRentalClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_51929"
 		Debug.AspNetCompiler.PhysicalPath = "CarRentalFrontEnd\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51929\"
