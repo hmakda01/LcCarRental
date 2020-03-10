@@ -25,6 +25,7 @@
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 58px; top: 361px; position: absolute"></asp:Label>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 56px; top: 72px; position: absolute" Text="Staff Id"></asp:Label>
         <asp:TextBox ID="txtStaffId" runat="server" style="z-index: 1; left: 136px; top: 71px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 248px; top: 383px; position: absolute" Text="Cancel" />
     </form>
 </body>
 </html>

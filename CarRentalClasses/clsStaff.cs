@@ -113,9 +113,86 @@ namespace CarRentalClasses
             }
         }
 
-        public string Valid(string text1, string text2, string text3, string text4, string text5, string text6)
+        public string Valid(string staffFirstName, string staffLastName, string staffEmail, string staffTelephone, string staffDateOfBirth)
         {
-            string Error = "";
+            //string variable to store error message
+            String Error = "";
+
+            DateTime DateTemp;
+
+            //if the name of the staffis not blank
+            if (staffFirstName.Length == 0)
+            {
+                //return an error message
+                Error = "the name may not be blank";
+            }
+            if (staffFirstName.Length > 25)
+            {
+                //error
+                Error = Error + "The staff name cannot have more than 25 characters ";
+            }
+            if (staffLastName.Length == 0)
+            {
+                //return an error message
+                Error = "the name may not be blank";
+            }
+            if (staffLastName.Length > 25)
+            {
+                //error
+                Error = Error + "The staff name cannot have more than 25 characters ";
+            }
+
+            if (staffEmail.Length == 0)
+            {
+                //return an error message
+                Error = "the name may not be blank";
+            }
+            if (staffEmail.Length > 50)
+            {
+                //error
+                Error = Error + "The staffemail cannot have more than 50 characters ";
+            }
+            //if the name of the staffis not blank
+            if (staffTelephone.Length == 0)
+            {
+                //return an error message
+                Error = "the name may not be blank";
+            }
+            if (staffTelephone.Length > 25)
+            {
+                //error
+                Error = Error + "The staff name cannot have more than 25 characters ";
+            }
+
+
+            try
+            {
+                DateTemp = Convert.ToDateTime(staffDateOfBirth);
+
+                if (DateTemp < DateTime.Now.Date)
+
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+
+                }
+
+                //check to see if the date is greater than today's date
+
+                if (DateTemp > DateTime.Now.Date)
+
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date : ";
+            }
+
             return Error;
         }
     }

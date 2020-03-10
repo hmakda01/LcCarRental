@@ -210,17 +210,17 @@ namespace CarRentalTest
             //var to store outcome
             Boolean OK = true;
             //apply the fisrtname 
-            FilteredStaff.ReportByStaffFirstName("Harry");
+            FilteredStaff.ReportByStaffFirstName("Callum");
             //check the correct the number found 
             if (FilteredStaff.Count == 2)
             {
                 //check the firsdt record is id 1
-                if (FilteredStaff.StaffList[0].StaffId != 1)
+                if (FilteredStaff.StaffList[0].StaffId != 8)
                 {
                     OK = false;
                 }
                 //check the first id is 2
-                if (FilteredStaff.StaffList[1].StaffId != 2)
+                if (FilteredStaff.StaffList[1].StaffId != 11)
                 {
                     OK = false;
                 }
