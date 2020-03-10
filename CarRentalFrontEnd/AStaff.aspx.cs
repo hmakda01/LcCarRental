@@ -47,7 +47,7 @@ public partial class AStaff : System.Web.UI.Page
         //create an instance for staff
         clsStaffCollection StaffBook = new clsStaffCollection();
         //validate the data on the web form
-        String Error = StaffBook.ThisStaff.Valid(txtStaffId.Text, txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffEmail.Text, txtTelephone.Text, txtStaffDateOfBirth.Text);
+        String Error = StaffBook.ThisStaff.Valid( txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffEmail.Text, txtTelephone.Text, txtStaffDateOfBirth.Text);
         //if the data is ok then add it to the object
         if (Error == "")
         {
@@ -75,7 +75,7 @@ public partial class AStaff : System.Web.UI.Page
      //create an instance for staff
         clsStaffCollection StaffBook = new clsStaffCollection();
     //validate the data on the web form
-    String Error = StaffBook.ThisStaff.Valid(txtStaffId.Text, txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffEmail.Text, txtTelephone.Text, txtStaffDateOfBirth.Text);
+    String Error = StaffBook.ThisStaff.Valid( txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffEmail.Text, txtTelephone.Text, txtStaffDateOfBirth.Text);
         //if the data is ok then add it to the object
         if (Error == "")
         {
@@ -115,6 +115,11 @@ public partial class AStaff : System.Web.UI.Page
 
 
     }
-    
 
+
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StaffList.aspx");
+    }
 }
