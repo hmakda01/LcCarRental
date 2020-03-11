@@ -42,10 +42,6 @@ namespace CarRentalTest
             TestItem.CustomerLastName = "Smith";
             TestItem.CustomerEmail = "";
             TestItem.CustomerTelephone = "01163480420";
-            TestItem.CustomerHouseNo = 34;
-            TestItem.CustomerPostCode = "le34er";
-            TestItem.CustomerStreet = "dawn road";
-            TestItem.CustomerTown = "lincoln";
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -63,18 +59,12 @@ namespace CarRentalTest
             Int32 PrimaryKey = 0;
             TestItem.Active = true;
             TestItem.Username = "John123";
-
             TestItem.CustomerFirstName = "John";
             TestItem.CustomerLastName = "Smith";
             TestItem.CustomerEmail = "";
             TestItem.CustomerTelephone = "01163480420";
-            TestItem.CustomerHouseNo = 34;
-            TestItem.CustomerPostCode = "le34er";
-            TestItem.CustomerStreet = "dawn road";
-            TestItem.CustomerTown = "lincoln";
             AllCustomers.ThisCustomer = TestItem;
             PrimaryKey = AllCustomers.Add();
-            TestItem.CustomerHouseNo = PrimaryKey;
             //assign the data to the property
             AllCustomers.ThisCustomer.Find(PrimaryKey);
             //test to see that the two values are the same

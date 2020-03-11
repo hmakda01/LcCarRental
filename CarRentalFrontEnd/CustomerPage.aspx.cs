@@ -18,6 +18,6 @@ public partial class CustomerPage : System.Web.UI.Page
         clsCustomer ACustomer = new clsCustomer();
         ACustomer.CustomerFirstName = txtFirstName.Text;
         Session["ACustomer"] = ACustomer;
-        Response.Redirect("CustomerViewer.aspx");
+        Response.Redirect("CustomerPageViewer.aspx");
     }
 }

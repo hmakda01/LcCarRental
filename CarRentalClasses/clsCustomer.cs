@@ -12,10 +12,7 @@ namespace CarRentalClasses
         public string CustomerTelephone;
 
         public bool Active { get; set; }
-        public int CustomerHouseNo { get; set; }
-        public string CustomerPostCode { get; set; }
-        public string CustomerStreet { get; set; }
-        public string CustomerTown { get; set; }
+
 
         public void Find(int primaryKey)
         {

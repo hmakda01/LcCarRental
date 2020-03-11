@@ -93,59 +93,6 @@ namespace CarRentalTest
             Assert.AreEqual(ACustomer.CustomerTelephone, TestData);
         }
 
-
-        [TestMethod]
-        public void CustomerHouseNo()
-        {
-            //create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to the property
-            string TestData = "21b";
-            //assign the data to the property
-            ACustomer.CustomerHouseNo = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(ACustomer.CustomerHouseNo, TestData);
-        }
-
-        [TestMethod]
-        public void CustomerPostCode()
-        {
-            //create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to the property
-            string TestData = "LE1 4AB";
-            //assign the data to the property
-            ACustomer.CustomerPostCode = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(ACustomer.CustomerPostCode, TestData);
-        }
-
-        [TestMethod]
-        public void CustomerStreet()
-        {
-            //create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to the property
-            string TestData = "Some Street";
-            //assign the data to the property
-            ACustomer.CustomerStreet = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(ACustomer.CustomerStreet, TestData);
-        }
-
-        [TestMethod]
-        public void CustomerTown()
-        {
-            //create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to the property
-            string TestData = "Leicester";
-            //assign the data to the property
-            ACustomer.CustomerTown = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(ACustomer.CustomerTown, TestData);
-        }
     }
-
 
 }

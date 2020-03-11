@@ -24,6 +24,11 @@
             <asp:TextBox ID="txtUsername" runat="server" style="margin-bottom: 0px"></asp:TextBox>
         </p>
         <p>
+            <asp:Label ID="lblPhoneNo" runat="server" Text="Phone No"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtPhoneNo" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+        </p>
+        <p>
             <asp:Label ID="lblEmail" runat="server" Text="Email Address"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtEmail" runat="server" style="margin-bottom: 0px"></asp:TextBox>
