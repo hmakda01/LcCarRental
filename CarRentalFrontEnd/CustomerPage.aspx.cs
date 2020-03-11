@@ -20,4 +20,10 @@ public partial class CustomerPage : System.Web.UI.Page
         Session["ACustomer"] = ACustomer;
         Response.Redirect("CustomerPageViewer.aspx");
     }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        Session["AddressNo"] = -1;
+        Response.Redirect("CustomerPage.aspx");
+    }
 }

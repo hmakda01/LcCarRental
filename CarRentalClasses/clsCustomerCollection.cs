@@ -71,6 +71,7 @@ namespace CarRentalClasses
             while (Index < RecordCount)
             {
                 clsCustomer ACustomer = new clsCustomer();
+                ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
                 ACustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
                 ACustomer.Username = Convert.ToString(DB.DataTable.Rows[Index]["Username"]);
                 ACustomer.CustomerFirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);

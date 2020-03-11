@@ -34,6 +34,19 @@ namespace CarRentalTest
         }
 
         [TestMethod]
+        public void CustomerID()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            //create some tests data
+            Int32 TestData = 1;
+            //assign the data to the property
+            ACustomer.CustomerID = TestData;
+            //test tpos ee if it works
+            Assert.AreEqual(ACustomer.CustomerID, TestData);
+        }
+        
+
+        [TestMethod]
         public void Username()
         {
             clsCustomer ACustomer = new clsCustomer();
