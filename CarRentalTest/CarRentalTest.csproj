@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Order1.1.cs" />
     <Compile Include="StaffTest.cs" />
+    <Compile Include="tstCarCollection.cs" />
+    <Compile Include="tstCars.cs" />
     <Compile Include="tstOrderCollection.cs" />
     <Compile Include="tstStaffCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
