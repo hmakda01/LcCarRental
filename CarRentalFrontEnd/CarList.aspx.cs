@@ -35,15 +35,12 @@ public partial class CarList : System.Web.UI.Page
         //set the name of the primariy key
         lstCars.DataValueField = "Id";
         //set the data field to display
-        lstCars.DataValueField = "Reg Plate";
+        lstCars.DataValueField = "RegPlate";
         //bind the data to the list
         lstCars.DataBind();
     }
 
-    protected void btnDelete_Click(object sender, EventArgs e)
-    {
-
-    }
+   
 
     //event handlert for the delete button
     protected void btnDelete_Click1(object sender, EventArgs e)
@@ -87,5 +84,16 @@ public partial class CarList : System.Web.UI.Page
             //display an error
             lblError.Text = "Please select a record to Edit from the list";
         }
+    }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+       
+            //store -1 into the session object to indicate this is a new record 
+            Session["CarID"] = -1;
+            //redirect to the data entry page
+            Response.Redirect("Car.aspx");
+        
+
     }
 }

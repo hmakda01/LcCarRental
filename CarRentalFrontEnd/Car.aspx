@@ -24,7 +24,7 @@
         <asp:Label ID="lblColour" runat="server" style="z-index: 1; left: 155px; top: 268px; position: absolute" Text="Colour"></asp:Label>
         <asp:Label ID="lblEngineSize" runat="server" style="z-index: 1; left: 153px; top: 313px; position: absolute" Text="Engine Size"></asp:Label>
         <asp:Label ID="lblCarModel" runat="server" style="z-index: 1; left: 157px; top: 219px; position: absolute" Text="Car Model"></asp:Label>
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 463px; top: 369px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 463px; top: 369px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" style="z-index: 1; left: 537px; top: 370px; position: absolute" Text="Ok" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 137px; top: 463px; position: absolute" Text="lblError"></asp:Label>
     </form>

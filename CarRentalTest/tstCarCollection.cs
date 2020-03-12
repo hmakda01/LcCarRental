@@ -79,7 +79,7 @@ namespace CarRentalTest
             //var to store the prim key
             Int32 PrimaryKey = 0;
             //set its proprties 
-            TestItem.CarID = 10;
+            TestItem.CarID = 90;
             TestItem.RegPlate = "dy20abc";
             TestItem.CarName = "Audi";
             TestItem.CarModel = "S5";
@@ -182,10 +182,6 @@ namespace CarRentalTest
             //test to see that the 2 values are the same
             Assert.AreEqual(AllCars.Count, FilteredCars.Count);
         }
-
-        
-        
-
 
         [TestMethod]
         public void ReportByRegPlateNoneFound()

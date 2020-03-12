@@ -14,7 +14,15 @@ public partial class Car : System.Web.UI.Page
     Int32 CarID;
     protected void Page_Load(object sender, EventArgs e)
     {
-     
+        //CHECK WHERE TO PUT BELLOW CODE!!
+        if (CarID == -1)
+        {
+            Add();
+        }
+        else
+        {
+            Update();
+        }
     }
 
     protected void btnOk_Click(object sender, EventArgs e)
@@ -30,35 +38,19 @@ public partial class Car : System.Web.UI.Page
         //store car name i session object
         Session["AnCar"] = AnCar;
         //redirect to the viewr page
-        Response.Redirect("CarViewr.aspx");
+        Response.Redirect("CarViewer.aspx");
 
-        //CHECK WHERE TO PUT BELLOW CODE!!
-        if (CarID == -1)
-        {
-            Add();
-        }
-        else
-        {
-            Update();
-        }
+      
     }
 
-    //event handler for the add button
-    protected void btnAdd_Click(object sender, EventArgs e)
-    {
-        //store -1 into the session object to indicate this is a new record 
-        Session["CarID"] = -1;
-        //redirect to the data entry page
-        Response.Redirect("AnCar.aspx");
-    }
-
+    
     //function for adding new records 
     void Add()
     {
         //create an instance of the cars
         clsCarCollection CarBook = new clsCarCollection();
         //validate the data on the web form
-        String Error = CarBook.ThisCar.Valid(txtCarID.Text, txtCarName.Text, txtCarModel.Text, txtCarReg.Text, txtColour.Text, txtEngineSize.Text, txtPrice.Text);
+        String Error = CarBook.ThisCar.Valid(txtCarName.Text, txtCarModel.Text, txtCarReg.Text, txtColour.Text, txtEngineSize.Text, txtPrice.Text);
         //if data is ok add to object
         if (Error == "")
         {
@@ -72,7 +64,7 @@ public partial class Car : System.Web.UI.Page
             //add the records
             CarBook.Add();
             //all done so redirect back to the main page
-            Response.Redirect("Car.aspx");
+            Response.Redirect("CarList.aspx");
         }
         else
         {
@@ -87,7 +79,7 @@ public partial class Car : System.Web.UI.Page
             //create an instance of the cars
             clsCarCollection CarBook = new clsCarCollection();
             //validate the data on the web form
-            String Error = CarBook.ThisCar.Valid(txtCarID.Text, txtCarName.Text, txtCarModel.Text, txtCarReg.Text, txtColour.Text, txtEngineSize.Text, txtPrice.Text);
+            String Error = CarBook.ThisCar.Valid(txtCarName.Text, txtCarModel.Text, txtCarReg.Text, txtColour.Text, txtEngineSize.Text, txtPrice.Text);
             //if data is ok add to object
             if (Error == "")
             {
@@ -113,6 +105,7 @@ public partial class Car : System.Web.UI.Page
 
     void DisplayCars()
     {
+        //CECK IF IN THE CORECT SPOT
         //create an instance of the car book
         clsCarCollection Carbook = new clsCarCollection();
         //find the record to update
@@ -124,5 +117,10 @@ public partial class Car : System.Web.UI.Page
         txtColour.Text = Carbook.ThisCar.CarColour;
         txtEngineSize.Text = Carbook.ThisCar.EngineSize;
         txtPrice.Text = Carbook.ThisCar.Price.ToString(); 
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CarList.aspx");
     }
 }
