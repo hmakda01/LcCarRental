@@ -52,7 +52,7 @@ public partial class AStaff : System.Web.UI.Page
         if (Error == "")
         {
             //get the data enetered by the user
-            StaffBook.ThisStaff.StaffId = Convert.ToInt32(txtStaffId.Text);
+            //StaffBook.ThisStaff.StaffId = Convert.ToInt32(txtStaffId.Text);
             StaffBook.ThisStaff.StaffFirstName = txtStaffFirstName.Text;
             StaffBook.ThisStaff.StaffLastName = txtStaffLastName.Text;
             StaffBook.ThisStaff.StaffEmail = txtStaffEmail.Text;
@@ -60,7 +60,8 @@ public partial class AStaff : System.Web.UI.Page
             StaffBook.ThisStaff.StaffDateOfBirth = Convert.ToDateTime(txtStaffDateOfBirth.Text);
             //add the record
             StaffBook.Add();
-            
+            lblError.Text = "Success";
+
         }
         else
         {
@@ -80,7 +81,7 @@ public partial class AStaff : System.Web.UI.Page
         if (Error == "")
         {
             //get the data enetered by the user
-            StaffBook.ThisStaff.StaffId = Convert.ToInt32(txtStaffId.Text);
+            //StaffBook.ThisStaff.StaffId = Convert.ToInt32(txtStaffId.Text);
             StaffBook.ThisStaff.StaffFirstName = txtStaffFirstName.Text;
             StaffBook.ThisStaff.StaffLastName = txtStaffLastName.Text;
             StaffBook.ThisStaff.StaffEmail = txtStaffEmail.Text;
@@ -106,7 +107,7 @@ public partial class AStaff : System.Web.UI.Page
         //find the record to update
         StaffBook.ThisStaff.Find(StaffId);
         //dispy  data
-        txtStaffId.Text = StaffBook.ThisStaff.StaffId.ToString();
+        //txtStaffId.Text = StaffBook.ThisStaff.StaffId.ToString();
         txtStaffFirstName.Text = StaffBook.ThisStaff.StaffFirstName;
         txtStaffLastName.Text = StaffBook.ThisStaff.StaffLastName;
         txtStaffEmail.Text = StaffBook.ThisStaff.StaffEmail;

@@ -165,33 +165,33 @@ namespace CarRentalClasses
             }
 
 
-            try
-            {
-                DateTemp = Convert.ToDateTime(staffDateOfBirth);
+            //try
+            //{
+            //    DateTemp = Convert.ToDateTime(staffDateOfBirth);
 
-                if (DateTemp < DateTime.Now.Date)
+            //    if (DateTemp < DateTime.Now.Date)
 
-                {
-                    //record the error
-                    Error = Error + "The date cannot be in the past : ";
+            //    {
+            //        //record the error
+            //        Error = Error + "The date cannot be in the past : ";
 
-                }
+            //    }
 
-                //check to see if the date is greater than today's date
+            //    //check to see if the date is greater than today's date
 
-                if (DateTemp > DateTime.Now.Date)
+            //    if (DateTemp > DateTime.Now.Date)
 
-                {
-                    //record the error
-                    Error = Error + "The date cannot be in the future : ";
+            //    {
+            //        //record the error
+            //        Error = Error + "The date cannot be in the future : ";
 
-                }
-            }
-            catch
-            {
-                //record the error
-                Error = Error + "The date was not a valid date : ";
-            }
+            //    }
+            //}
+            //catch
+            //{
+            //    //record the error
+            //    Error = Error + "The date was not a valid date : ";
+            //}
 
             return Error;
         }

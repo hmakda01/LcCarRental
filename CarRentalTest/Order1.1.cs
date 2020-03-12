@@ -21,8 +21,8 @@ namespace CarRentalTest
     {
         clsOrder AnOrder = new clsOrder();
         Int32 TestData = 010420;
-            AnOrder.CarReg = TestData;
-        Assert.AreEqual(AnOrder.Active, TestData);
+        AnOrder.CarReg = TestData;
+        Assert.AreEqual(AnOrder.CarReg, TestData);
     }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace CarRentalTest
             clsOrder AnOrder = new clsOrder();
             Int32 TestData = 978634;
             AnOrder.CustomerID = TestData;
-            Assert.AreEqual(AnOrder.Active, TestData);
+            Assert.AreEqual(AnOrder.CustomerID, TestData);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace CarRentalTest
             clsOrder AnOrder = new clsOrder();
             Int32 TestData = 978634;
             AnOrder.OrderID = TestData;
-            Assert.AreEqual(AnOrder.Active, TestData);
+            Assert.AreEqual(AnOrder.OrderID, TestData);
         }
 
         [TestMethod]
@@ -49,15 +49,16 @@ namespace CarRentalTest
             clsOrder AnOrder = new clsOrder();
             Int32 TestData = 978634;
             AnOrder.StaffID = TestData;
-            Assert.AreEqual(AnOrder.Active, TestData);
+            Assert.AreEqual(AnOrder.StaffID, TestData);
         }
 
         [TestMethod]
-    public void DateAddedPropertyOK()
+        public void DateAddedPropertyOK()
         {
             clsOrder AnOrder = new clsOrder();
             DateTime TestData = DateTime.Now.Date;
             AnOrder.DateAdded = TestData;
+            Assert.AreEqual(AnOrder.DateAdded, TestData);
 
         }
         [TestMethod]
@@ -66,7 +67,7 @@ namespace CarRentalTest
             clsOrder AnOrder = new clsOrder();
             string TestData = "hfhggjjkkyfh";
             AnOrder.Email = TestData;
-            Assert.AreEqual(AnOrder.Active, TestData);
+            Assert.AreEqual(AnOrder.Email, TestData);
         }
 
         [TestMethod]
@@ -75,7 +76,7 @@ namespace CarRentalTest
             clsOrder AnOrder = new clsOrder();
             Int32 TestData = 978634;
             AnOrder.Price = TestData;
-            Assert.AreEqual(AnOrder.Active, TestData);
+            Assert.AreEqual(AnOrder.Price, TestData);
         }
 
 

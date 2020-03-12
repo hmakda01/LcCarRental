@@ -71,11 +71,11 @@ namespace CarRentalClasses
             clsDataConnection DB = new clsDataConnection();
             //set the stroed procudure
            // DB.AddParameter("StaffId", mThisStaff.StaffId);
-            DB.AddParameter("StaffFirstName", mThisStaff.StaffFirstName);
-            DB.AddParameter("StaffLastName", mThisStaff.StaffLastName);
-            DB.AddParameter("StaffEmail", mThisStaff.StaffEmail);
-            DB.AddParameter("StaffTelephone", mThisStaff.StaffTelephone);
-            DB.AddParameter("StaffDateOfBirth", mThisStaff.StaffDateOfBirth);
+            DB.AddParameter("StaffFirstName", ThisStaff.StaffFirstName);
+            DB.AddParameter("StaffLastName", ThisStaff.StaffLastName);
+            DB.AddParameter("StaffEmail", ThisStaff.StaffEmail);
+            DB.AddParameter("StaffTelephone", ThisStaff.StaffTelephone);
+            DB.AddParameter("StaffDateOfBirth", ThisStaff.StaffDateOfBirth);
             //execute the qeury
             return DB.Execute("sproc_tblStaff_Insert");
         }
