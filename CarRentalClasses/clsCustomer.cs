@@ -16,7 +16,12 @@ namespace CarRentalClasses
         public bool Active { get; set; }
 
 
-        public void Find(int primaryKey)
+        public bool Find(int primaryKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Valid(string text1, string text2, string text3, string text4, string text5, string text6)
         {
             throw new NotImplementedException();
         }

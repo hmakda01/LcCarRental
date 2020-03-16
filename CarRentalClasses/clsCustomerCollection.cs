@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System;
-
 namespace CarRentalClasses
 {
     public class clsCustomerCollection
@@ -82,6 +81,13 @@ namespace CarRentalClasses
                 mCustomerList.Add(ACustomer);
                 Index++;
             }
+        }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            DB.Execute("sproc_tblCustomer_Delete");
         }
     }
 }

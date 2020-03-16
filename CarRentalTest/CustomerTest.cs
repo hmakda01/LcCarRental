@@ -96,6 +96,8 @@ namespace CarRentalTest
             Assert.AreEqual(ACustomer.CustomerEmail, TestData);
         }
 
+        [TestMethod]
+
         public void CustomerTelephone()
         {
             clsCustomer ACustomer = new clsCustomer();
