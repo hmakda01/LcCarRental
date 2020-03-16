@@ -35,7 +35,7 @@ public partial class AStaff : System.Web.UI.Page
    
        {
             //adds a new rcord
-            Add();
+            //Add();
             Response.Redirect("StaffList.aspx");
        }
       
@@ -122,5 +122,10 @@ public partial class AStaff : System.Web.UI.Page
     protected void btnCancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("StaffList.aspx");
+    }
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Add();
     }
 }
