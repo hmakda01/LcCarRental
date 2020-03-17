@@ -34,7 +34,7 @@ public partial class CarList : System.Web.UI.Page
         //set the data source to the list of counties in the collection
         lstCars.DataSource = Cars.CarList;
         //set the name of the primariy key
-        lstCars.DataValueField = "Id";
+        lstCars.DataValueField = "CarId";
         //set the data field to display
         lstCars.DataValueField = "RegPlate";
         //bind the data to the list

@@ -296,16 +296,16 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void RegPlateMinBoundary()
+        public void RegPlateMinLessOne()
         {
             //create an instance of the class we want to create
-            clsCar ARegPlate = new clsCar();
+            clsCar AnRegPlate = new clsCar();
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "KKKKKKKKKK"; //this should be ok
+            string RegPlate = "1"; //this should be ok
             //invoke the method
-            Error = ARegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
+            Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -332,7 +332,8 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "kl12hn"; //this should be ok
+            string RegPlate = ""; //this should be ok
+            RegPlate = RegPlate.PadRight(49, 'a');
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -346,7 +347,8 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "cc12bvcx"; //this should be ok
+            string RegPlate = ""; //this should be ok
+            RegPlate = RegPlate.PadRight(50, 'a');
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -375,7 +377,7 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "cc12bvc"; //this should be ok
+            string RegPlate = "asdfghjkloasdfghjkloasdfghjkloasdfghjkloasdfghjkloa"; //this should be ok
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -493,7 +495,7 @@ namespace CarRentalTest
             clsCar AnCarName = new clsCar();
             //string variable to store any error message
             String Error = "";
-            //create some test data to pass to the method
+            //create some test data to pass to the method                                                                                                                                                               
             string CarName = "";
             //this should be ok
             CarName = CarName.PadRight(500, 'a');
