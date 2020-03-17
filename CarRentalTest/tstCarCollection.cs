@@ -8,7 +8,6 @@ namespace CarRentalTest
     [TestClass]
     public class tstCarCollection
     {
-        public List<clsCar> mCarList { get; private set; }
 
         [TestMethod]
         public void InstanceOk()
@@ -79,12 +78,11 @@ namespace CarRentalTest
             //var to store the prim key
             Int32 PrimaryKey = 0;
             //set its proprties 
-            TestItem.CarID = 90;
             TestItem.RegPlate = "dy20abc";
             TestItem.CarName = "Audi";
             TestItem.CarModel = "S5";
             TestItem.CarColour = "Blue";
-            TestItem.EngineSize = "2949cc";
+            TestItem.EngineSize = "2949";
             TestItem.Price = 150;
             //set this cars to the test data
             AllCars.ThisCar = TestItem;
@@ -108,7 +106,6 @@ namespace CarRentalTest
             //var to store the prim key
             Int32 PrimaryKey = 0;
             //set its proprties 
-            TestItem.CarID = 10;
             TestItem.RegPlate = "dy20abc";
             TestItem.CarName = "Audi";
             TestItem.CarModel = "S5";
@@ -141,7 +138,6 @@ namespace CarRentalTest
             //var to store the prim key
             Int32 PrimaryKey = 0;
             //set its proprties 
-            TestItem.CarID = 10;
             TestItem.RegPlate = "dy20abc";
             TestItem.CarName = "Audi";
             TestItem.CarModel = "S5";
@@ -153,12 +149,11 @@ namespace CarRentalTest
             //+ the record
             PrimaryKey = AllCars.Add();
             //modify the test data 
-            TestItem.CarID = 10;
-            TestItem.RegPlate = "dy20abc";
-            TestItem.CarName = "Audi";
-            TestItem.CarModel = "S5";
-            TestItem.CarColour = "Blue";
-            TestItem.EngineSize = "2949cc";
+            TestItem.RegPlate = "kl98ght";
+            TestItem.CarName = "Audj";
+            TestItem.CarModel = "q5";
+            TestItem.CarColour = "Black";
+            TestItem.EngineSize = "3000cc";
             TestItem.Price = 150;
             //set the record based on the new test data
             AllCars.ThisCar = TestItem;
@@ -190,6 +185,7 @@ namespace CarRentalTest
             clsCarCollection FilteredCars = new clsCarCollection();
             //apply a post code that doesnt exist
             FilteredCars.ReportByRegPlate("xxxx xxx");
+            Assert.AreEqual(0, FilteredCars.Count);
         }
 
         [TestMethod]
@@ -200,7 +196,7 @@ namespace CarRentalTest
             //var to sore outcome
             Boolean Ok = true;
             //apply a reg plate that doesnt exist
-            FilteredCars.ReportByRegPlate("xxxx xxx");
+            FilteredCars.ReportByRegPlate("gh19 lop");
             //check that the correct no of records are found 
             if (FilteredCars.Count == 2)
             {
@@ -210,7 +206,7 @@ namespace CarRentalTest
                     Ok = false;
                 }
                 //check that the first reocrd is ID 5
-                if (FilteredCars.CarList[5].CarID != 5)
+                if (FilteredCars.CarList[1].CarID != 50)
                 {
                     Ok = false;
                 }
@@ -222,5 +218,7 @@ namespace CarRentalTest
             //test to see that there are no records
             Assert.IsTrue(Ok);
         }
+
+        
     }
 }

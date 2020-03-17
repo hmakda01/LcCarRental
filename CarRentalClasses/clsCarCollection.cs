@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
+
 namespace CarRentalClasses
 {
     public class clsCarCollection
@@ -73,14 +74,13 @@ namespace CarRentalClasses
             //connect 2 db
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@CarID", mThisCar.CarID);
             DB.AddParameter("@RegPlate", mThisCar.RegPlate);
             DB.AddParameter("@CarName", mThisCar.CarName);
             DB.AddParameter("@CarModel", mThisCar.CarModel);
             DB.AddParameter("@CarColour", mThisCar.CarColour);
             DB.AddParameter("@EngineSize", mThisCar.EngineSize);
             DB.AddParameter("@Price", mThisCar.Price);
-            return DB.Execute("sproc_tblCars_SelectAll");
+            return DB.Execute("sproc_tblCars_Insert");
         }
 
         public void Delete()
@@ -121,6 +121,7 @@ namespace CarRentalClasses
             DB.Execute("sproc_tblCars_FilterByRegPlate");
             //populate the array list with the data table
             PopulateArray(DB);
+
         }
 
 

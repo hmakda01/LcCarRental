@@ -92,4 +92,21 @@ public partial class CarList : System.Web.UI.Page
         //redirect to the data entry page
         Response.Redirect("Car.aspx");
     }
+
+
+    //bellow named car name but use for reg search because car list is reg
+    protected void btnDisplayAll_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void tctCNSearch_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+
+    }
 }
