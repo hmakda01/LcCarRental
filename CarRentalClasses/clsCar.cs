@@ -104,17 +104,17 @@ namespace CarRentalClasses
             }
         }
 
-        public string Valid(string regPlate, string carName, string carModel, string carColor, string engineSize, string price)
+        public string Valid(string RegPlate, string carName, string carModel, string carColor, string engineSize, string price)
         {
             //create a string variable to store the error
             String Error = "";
             //if the CarReg is blak
-            if (regPlate.Length == 0)
+            if (RegPlate.Length == 0)
             {
                 //record the err
                 Error = Error + "The Car Reg may not be blank";
             }
-            if (regPlate.Length < 10)
+            if (RegPlate.Length > 50)
             {
                 Error = Error + "The Car Reg must not be more than 6 characters";
             }
@@ -141,7 +141,7 @@ namespace CarRentalClasses
                 //record the err
                 Error = Error + "The Car colour may not be blank";
             }
-            if (CarColour.Length > 10)
+            if (carColor.Length > 10)
             {
                 Error = Error + "The Car colour must not be more than 10 characters";
             }
@@ -150,7 +150,7 @@ namespace CarRentalClasses
                 //record the err
                 Error = Error + "The Car Engine Size may not be blank";
             }
-            if (engineSize.Length > 4)
+            if (engineSize.Length > 6)
             {
                 Error = Error + "The Car Engine Size must not be more than 4 characters";
             }

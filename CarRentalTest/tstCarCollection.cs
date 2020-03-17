@@ -19,7 +19,7 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void CarListOk()
+        public void CarListAndCountOk()
         {
             //create an instance of the class we want to create
             clsCarCollection AllCars = new clsCarCollection();
@@ -67,6 +67,8 @@ namespace CarRentalTest
             //test to see that the two values are the same
             Assert.AreEqual(AllCars.ThisCar, TestCar);
         }
+
+    
 
         [TestMethod]
         public void AddMethodOk()
@@ -196,17 +198,17 @@ namespace CarRentalTest
             //var to sore outcome
             Boolean Ok = true;
             //apply a reg plate that doesnt exist
-            FilteredCars.ReportByRegPlate("gh19 lop");
+            FilteredCars.ReportByRegPlate("cd18hju");
             //check that the correct no of records are found 
             if (FilteredCars.Count == 2)
             {
                 //check that the first record is ID 4
-                if (FilteredCars.CarList[0].CarID != 4)
+                if (FilteredCars.CarList[0].CarID != 3)
                 {
                     Ok = false;
                 }
                 //check that the first reocrd is ID 5
-                if (FilteredCars.CarList[1].CarID != 50)
+                if (FilteredCars.CarList[1].CarID != 20)
                 {
                     Ok = false;
                 }
