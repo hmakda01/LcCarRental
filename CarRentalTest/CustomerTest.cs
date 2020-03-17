@@ -8,6 +8,15 @@ namespace CarRentalTest
     [TestClass]
     public class CustomerTest
     {
+
+        string Username = "John123";
+        string CustomerFirstName = "John";
+        string CustomerLastName = "Simms";
+        string CustomerEmail = "john@email.com";
+        string CustomerAddress = "123 new road";
+        string CustomerTelephone = "01234567890";
+
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -47,7 +56,7 @@ namespace CarRentalTest
 
 
         [TestMethod]
-        public void Username()
+        public void UsernameOK()
         {
             clsCustomer ACustomer = new clsCustomer();
             //create some tests data
@@ -59,7 +68,7 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void CustomerFirstName()
+        public void CustomerFirstNameOK()
         {
             clsCustomer ACustomer = new clsCustomer();
             //create some tests data
@@ -71,7 +80,7 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void CustomerLastName()
+        public void CustomerLastNameOK()
         {
             clsCustomer ACustomer = new clsCustomer();
             //create some tests data
@@ -85,7 +94,7 @@ namespace CarRentalTest
 
         [TestMethod]
 
-        public void CustomerEmail()
+        public void CustomerEmailOK()
         {
             clsCustomer ACustomer = new clsCustomer();
             //create some tests data
@@ -98,7 +107,20 @@ namespace CarRentalTest
 
         [TestMethod]
 
-        public void CustomerTelephone()
+        public void CustomerAddressOK()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            //create some tests data
+            string TestData = "12 Random Road";
+            //assign the data to the property
+            ACustomer.CustomerAddress = TestData;
+            //test tpos ee if it works
+            Assert.AreEqual(ACustomer.CustomerAddress, TestData);
+        }
+
+        [TestMethod]
+
+        public void CustomerTelephoneOK()
         {
             clsCustomer ACustomer = new clsCustomer();
             String TestData = "01163480420";
@@ -108,6 +130,153 @@ namespace CarRentalTest
             Assert.AreEqual(ACustomer.CustomerTelephone, TestData);
         }
 
-    }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            //assgn the data to the property
+            Int32 CustomerID = 4;
+            //
+            Found = ACustomer.Find(CustomerID);
+            //apply the test
+            Assert.IsTrue(Found);
+        }
 
+        [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerID != 4)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestUsernameFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.Username != "John123")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerFirstName != "John")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerLastName != "Simms")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerEmail != "John@email.com")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerAddress != "123 Some Street")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPhoneNoFound()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CustomerID = 4;
+            Found = ACustomer.Find(CustomerID);
+            if (ACustomer.CustomerTelephone != "01234567890")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            String Error = "";
+            Error = ACustomer.Valid(Username, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress, CustomerTelephone);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UsernameMinLessOne()
+        {
+            clsCustomer ACustomer = new clsCustomer();
+            String Error = "";
+            string Username = "";
+            Error = ACustomer.Valid(Username, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerAddress, CustomerTelephone);
+            Assert.AreNotEqual(Error, "");
+        }
+        //page 17 week 24
+        //page 17 week 24
+        //page 17 week 24
+        //page 17 week 24
+        //page 17 week 24
+        //page 17 week 24
+
+    }
 }
+
+
+
+

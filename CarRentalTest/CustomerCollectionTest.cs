@@ -31,6 +31,7 @@ namespace CarRentalTest
         {
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             clsCustomer TestItem = new clsCustomer();
+            //put in test data
             Int32 PrimaryKey = 0;
             TestItem.Active = true;
             TestItem.CustomerID = 4;
@@ -153,5 +154,6 @@ namespace CarRentalTest
             }
             Assert.IsTrue(OK);
         }
+
     }
 }
