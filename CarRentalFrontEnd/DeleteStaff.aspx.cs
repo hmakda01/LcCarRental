@@ -33,4 +33,9 @@ public partial class Delete : System.Web.UI.Page
         //redierect back to amin page
         Response.Redirect("StaffList.aspx");
     }
+
+    protected void btnNo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StaffList.aspx");
+    }
 }

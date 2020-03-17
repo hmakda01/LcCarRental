@@ -8,35 +8,28 @@ namespace CarRentalClasses
     public class clsCar
     {
         private Int32 mCarID;
-        private string mCarName;
-        private string mRegPlate;
-        private string mCarModel;
-        private string mCarColour;
-        private string mEngineSize;
+        private String mRegPlate;
+        private String mCarName;
+        private String mCarModel;
+        private String mCarColour;
+        private String mEngineSize;
         private Int32 mPrice;
 
-        public string CarName
-        {
-            get
-            {
-                return mCarName;
-            }
-            set
-            {
-                mCarName = value;
-            }
-        }
 
-        public string CarColour
+
+        public int CarID
         {
             get
             {
-                return mCarColour;
+                return mCarID;
             }
+
             set
             {
-                mCarColour = value;
+                //set the value of the data private data meber
+                mCarID = value;
             }
+
         }
 
         public string RegPlate
@@ -51,6 +44,18 @@ namespace CarRentalClasses
             }
         }
 
+        public string CarName
+        {
+            get
+            {
+                return mCarName;
+            }
+            set
+            {
+                mCarName = value;
+            }
+        }
+
         public string CarModel
         {
             get
@@ -60,6 +65,18 @@ namespace CarRentalClasses
             set
             {
                 mCarModel = value;
+            }
+        }
+
+        public string CarColour
+        {
+            get
+            {
+                return mCarColour;
+            }
+            set
+            {
+                mCarColour = value;
             }
         }
 
@@ -87,7 +104,7 @@ namespace CarRentalClasses
             }
         }
 
-        public string Valid(string regPlate, string carName, string carModel, string carColor, string enginesize, string price)
+        public string Valid(string regPlate, string carName, string carModel, string carColor, string engineSize, string price)
         {
             //create a string variable to store the error
             String Error = "";
@@ -97,7 +114,7 @@ namespace CarRentalClasses
                 //record the err
                 Error = Error + "The Car Reg may not be blank";
             }
-            if (regPlate.Length > 7)
+            if (regPlate.Length < 10)
             {
                 Error = Error + "The Car Reg must not be more than 6 characters";
             }
@@ -110,16 +127,16 @@ namespace CarRentalClasses
             {
                 Error = Error + "The Car Name must not be more than 15 characters";
             }
-            if (CarModel.Length == 0)
+            if (carModel.Length == 0)
             {
                 //record the err
                 Error = Error + "The Car model may not be blank";
             }
-            if (CarModel.Length > 15)
+            if (carModel.Length > 15)
             {
                 Error = Error + "The Car model must not be more than 15 characters";
             }
-            if (CarColour.Length == 0)
+            if (carColor.Length == 0)
             {
                 //record the err
                 Error = Error + "The Car colour may not be blank";
@@ -128,12 +145,12 @@ namespace CarRentalClasses
             {
                 Error = Error + "The Car colour must not be more than 10 characters";
             }
-            if (EngineSize.Length == 0)
+            if (engineSize.Length == 0)
             {
                 //record the err
                 Error = Error + "The Car Engine Size may not be blank";
             }
-            if (EngineSize.Length > 4)
+            if (engineSize.Length > 4)
             {
                 Error = Error + "The Car Engine Size must not be more than 4 characters";
             }
@@ -150,17 +167,7 @@ namespace CarRentalClasses
             return Error;
         }
 
-        public int CarID
-        {
-            get
-            {
-                return mCarID;
-            }
-            set
-            {
-                mCarID = value;
-            }
-        }
+
 
 
 

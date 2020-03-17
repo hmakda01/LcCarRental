@@ -33,4 +33,9 @@ public partial class Delete : System.Web.UI.Page
         //redirect back to main page
         Response.Redirect("CarList.aspx");
     }
+
+    protected void btnNo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CarList.aspx");
+    }
 }

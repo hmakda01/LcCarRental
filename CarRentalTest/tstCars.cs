@@ -7,12 +7,12 @@ namespace CarRentalTest
     [TestClass]
     public class tstCar
     {
-        string RegPlate = "as23 vfd";
-        string CarName = "bmw";
-        string CarModel = "1s";
-        string CarColour = "Black";
-        string EngineSize = "2541";
-        string Price = "1";
+        string RegPlate = "gh19 lop";
+        string CarName = "BMW";
+        string CarModel = "8 series";
+        string CarColour = "red";
+        string EngineSize = "50000";
+        string Price = "4576";
 
         [TestMethod]
         public void InstanceOk()
@@ -24,6 +24,16 @@ namespace CarRentalTest
 
         }
 
+        [TestMethod]
+        public void CarID()
+        {
+            clsCar ACar = new clsCar();
+            Int32 TestData = 21;
+            //assgn the data to the property
+            ACar.CarID = TestData;
+            //applythe test
+            Assert.AreEqual(ACar.CarID, TestData);
+        }
 
         [TestMethod]
         public void CarNamePropertyOK()
@@ -163,7 +173,7 @@ namespace CarRentalTest
             //boolean vairble to record if data is ok
             Boolean Ok = true;
             //create some test data to use with the method
-            Int32 CarID = 22;
+            Int32 CarID = 21;
             //invoke the method 
             Found = AnCar.Find(CarID);
             //check the car id
@@ -233,7 +243,7 @@ namespace CarRentalTest
             //invoke the method 
             Found = AnCar.Find(CarID);
             //check the car id
-            if (AnCar.CarColour != "black")
+            if (AnCar.CarColour != "cccc")
             {
                 Ok = false;
             }
@@ -286,16 +296,16 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void RegPlateMin()
+        public void RegPlateMinBoundary()
         {
             //create an instance of the class we want to create
-            clsCar AnRegPlate = new clsCar();
+            clsCar ARegPlate = new clsCar();
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "BMW"; //this should be ok
+            string RegPlate = "KKKKKKKKKK"; //this should be ok
             //invoke the method
-            Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
+            Error = ARegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -308,7 +318,7 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "aass"; //this should be ok
+            string RegPlate = "cc12"; //this should be ok
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -336,7 +346,7 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "kfdsert"; //this should be ok
+            string RegPlate = "cc12bvcx"; //this should be ok
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -351,7 +361,7 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "aaa"; //this should be ok
+            string RegPlate = "cc1"; //this should be ok
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -365,7 +375,7 @@ namespace CarRentalTest
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string RegPlate = "dddddddd"; //this should be ok
+            string RegPlate = "cc12bvc"; //this should be ok
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -382,7 +392,7 @@ namespace CarRentalTest
             //create some test data to pass to the method
             string RegPlate = "";
             //this should be ok
-            RegPlate = RegPlate.PadRight(500, 'a');
+            RegPlate = RegPlate.PadRight(500, 'c');
             //invoke the method
             Error = AnRegPlate.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
@@ -676,7 +686,7 @@ namespace CarRentalTest
         public void CarColourMaxplusOne()
         {
             //create an instance of the class we want to create
-            clsCar AnCarColour = new clsCar();
+            clsCar ACarColour = new clsCar();
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
@@ -684,7 +694,7 @@ namespace CarRentalTest
             //this should be ok
             CarColour = CarColour.PadRight(500, 'a');
             //invoke the method
-            Error = AnCarColour.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
+            Error = ACarColour.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -692,7 +702,7 @@ namespace CarRentalTest
         public void CarColourExtremeMax()
         {
             //create an instance of the class we want to create
-            clsCar AnCarColour = new clsCar();
+            clsCar ACarColour = new clsCar();
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
@@ -700,7 +710,7 @@ namespace CarRentalTest
             //this should be ok
             CarColour = CarColour.PadRight(500, 'a');
             //invoke the method
-            Error = AnCarColour.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
+            Error = ACarColour.Valid(RegPlate, CarName, CarModel, CarColour, EngineSize, Price);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
