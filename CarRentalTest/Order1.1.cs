@@ -208,7 +208,7 @@ namespace CarRentalTest
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 OrderID = 25;
+            Int32 OrderID = 2;
             //Invoke the method
             Found = AnOrder.Find(OrderID);
             //check the Order Id
@@ -372,7 +372,7 @@ namespace CarRentalTest
 
         }
         [TestMethod]
-        public void DateAddedMinLessOne()
+        public void DateMinLessOne()
         {
             //create an instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
@@ -414,7 +414,7 @@ namespace CarRentalTest
 
         //}
         [TestMethod]
-        public void DateAddedMinPlusOne()
+        public void DateMinPlusOne()
         {
             //create an instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
@@ -435,7 +435,7 @@ namespace CarRentalTest
 
         }
         [TestMethod]
-        public void DateAddedExtremeMax()
+        public void DateExtremeMax()
         {
             //create an instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
@@ -457,7 +457,7 @@ namespace CarRentalTest
         }
 
         [TestMethod]
-        public void DateAddedInvalidData()
+        public void DateInvalidData()
         {
             //create an instance of the class we want to create
             clsOrder AnOrder = new clsOrder();

@@ -64,6 +64,7 @@ public partial class Order : System.Web.UI.Page
             OrderBook.ThisOrder.Email = TxtBEmail.Text;
             OrderBook.ThisOrder.Price = Convert.ToInt32(TxtBPrice);
             OrderBook.Add();
+            LblError.Text = "There was a problemn with the data entered" + Error;
         }
         else
         {
@@ -101,6 +102,12 @@ public partial class Order : System.Web.UI.Page
     protected void BtnCancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("OrderList.aspx");
+    }
+
+    protected void BtnSave_Click(object sender, EventArgs e)
+    {
+        Add();
+
     }
 }
 

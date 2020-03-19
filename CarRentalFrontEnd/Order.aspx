@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background - color: skyblue"">
     <form id="form1" runat="server">
         <div>
         </div>
@@ -40,6 +40,7 @@
         <p>
             <asp:Button ID="BtnOK" runat="server" Text="Ok" OnClick="BtnOK_Click" />
             <asp:Button ID="BtnCancel" runat="server" style="margin-left: 30px" Text="Cancel" OnClick="BtnCancel_Click" />
+            <asp:Button ID="BtnSave" runat="server" style="margin-left: 42px" Text="Save" OnClick="BtnSave_Click" />
         </p>
     </form>
 </body>
