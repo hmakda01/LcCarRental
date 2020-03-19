@@ -109,15 +109,15 @@ namespace CarRentalClasses
             DB.Execute("sproc_tblStaff_Update");
         }
 
-        public void ReportByStaffFirstName(string StaffFirstName)
+        public void ReportByStaffLastName(string StaffLastName)
         {
             //filters the record based on a full or partial fisrtname
             //connect to database
             clsDataConnection DB = new clsDataConnection();
             //send the name parameter to the database
-            DB.AddParameter("@StaffFirstName", StaffFirstName);
+            DB.AddParameter("@StaffLastName", StaffLastName);
             //execute the styored procudure 
-            DB.Execute("sproc_tblStaff_FilterByStaffFirstName");
+            DB.Execute("sproc_tblStaff_FilterByStaffLastName");
             //popoulate the array list with the table
             PopulateArray(DB);
         }
