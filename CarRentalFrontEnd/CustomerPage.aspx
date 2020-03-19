@@ -6,8 +6,15 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color: skyblue">
     <form id="form2" runat="server">
+        <p>
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="40pt" style="z-index: 1; left: 8px; top: 47px; position: absolute; height: 57px; width: 283px" Text="LCCarHire"></asp:Label>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
         <p>
             <asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -38,7 +45,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtAddress" runat="server" style="margin-bottom: 0px"></asp:TextBox>
         </p>
-        <asp:CheckBox ID="Active" runat="server" />
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>

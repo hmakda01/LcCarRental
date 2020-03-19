@@ -6,10 +6,14 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color: skyblue">
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <br />
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="40pt" style="z-index: 1; left: 8px; top: 33px; position: absolute; height: 57px; width: 283px" Text="LCCarHire"></asp:Label>
+        <br />
+        <br />
+        <br />
+        <br />
         <asp:ListBox ID="lstCustomer" runat="server" Height="265px" Width="341px"></asp:ListBox>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
