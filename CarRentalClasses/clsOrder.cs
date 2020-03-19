@@ -151,7 +151,7 @@ namespace CarRentalClasses
         {
             //create a string variable to store the error
             String Error = "";
-            //DateTime DateTemp;
+            DateTime DateTemp;
             //if the OrderID is blank
             if (email.Length == 0)
             {
@@ -159,26 +159,26 @@ namespace CarRentalClasses
                 Error = Error + "The email may not be blank : ";
             }
 
-            //try
-            //{
-            //    //copy the date value to the DateTemp variable
-            //    DateTemp = Convert.ToDateTime(date);
-            //    DateTime minDate = new DateTime(2000, 01, 01);
-            //    DateTime maxDate = DateTime.Today;
-            //    if (DateTemp < DateTime.Now.Date)
-            //    {
-            //        Error = Error + "The date cannot be in the past : ";
-            //    }
-            //    if (DateTemp < minDate || DateTemp > maxDate)
-            //    { //record the error
+            try
+            {
+                //copy the date value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(date);
+                DateTime minDate = new DateTime(2000, 01, 01);
+                DateTime maxDate = DateTime.Today;
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                if (DateTemp < minDate || DateTemp > maxDate)
+                { //record the error
 
-            //        Error = Error + "The date cannot be in the future : " + maxDate;
-            //    }
-            //}
-            //catch
-            //{
-            //    Error = Error + "The date was not a valid date : ";
-            //}
+                    Error = Error + "The date cannot be in the future : " + maxDate;
+                }
+            }
+            catch
+            {
+                Error = Error + "The date was not a valid date : ";
+            }
 
             if (price.Length == 0)
             {
