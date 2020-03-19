@@ -208,7 +208,7 @@ namespace CarRentalTest
                     Ok = false;
                 }
                 //check that the first reocrd is ID 5
-                if (FilteredCars.CarList[1].CarID != 20)
+                if (FilteredCars.CarList[1].CarID != 193)
                 {
                     Ok = false;
                 }
