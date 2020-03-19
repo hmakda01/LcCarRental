@@ -175,14 +175,14 @@ namespace CarRentalTest
 
         [TestMethod]
 
-        public void ReportByStaffFirstName()
+        public void ReportByStaffLastName()
         {
             //create an intance of the class contsining unfiltered results
             clsStaffCollection AllStaff = new clsStaffCollection();
             //create an instance of the filtered data
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             //apply a blank string (should return all records)
-            FilteredStaff.ReportByStaffFirstName("");
+            FilteredStaff.ReportByStaffLastName("");
             //test to see that are tewo values are the same
             Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
         }
@@ -190,12 +190,12 @@ namespace CarRentalTest
 
         [TestMethod]
 
-        public void ReportByStaffFirstNameNoneFound()
+        public void ReportByStaffLastNameNoneFound()
         {
             //create an instance of the filtered data
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             //apply a blank string (should return all records)
-            FilteredStaff.ReportByStaffFirstName("xxxxxxx");
+            FilteredStaff.ReportByStaffLastName("xxxxxxx");
             //test to see that are tewo values are the same
             Assert.AreEqual(0, FilteredStaff.Count);
         }
@@ -203,14 +203,14 @@ namespace CarRentalTest
 
         [TestMethod]
 
-        public void ReportByStaffFirstNameTestDataFound()
+        public void ReportByStaffLastNameTestDataFound()
         {
             //create an intance of the filtered data
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             //var to store outcome
             Boolean OK = true;
             //apply the fisrtname 
-            FilteredStaff.ReportByStaffFirstName("Callum");
+            FilteredStaff.ReportByStaffLastName("Odoi");
             //check the correct the number found 
             if (FilteredStaff.Count == 2)
             {

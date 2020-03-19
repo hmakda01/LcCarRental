@@ -92,11 +92,34 @@ public partial class StaffList : System.Web.UI.Page
 
     protected void btnApply_Click(object sender, EventArgs e)
     {
-        
+        //display  only last nam,e
+       DisplayFilterStaff(txtStaffLastName.Text);
+    }
+
+    Int32 DisplayFilterStaff(string StaffLastNameFilter)
+    {
+        Int32 StaffId;
+        //string last name
+        string StaffLastName;
+        clsStaffCollection StaffBook = new clsStaffCollection();
+        StaffBook.ReportByStaffLastName(StaffLastNameFilter);
+        Int32 RecordCount;
+        Int32 Index = 0;
+        RecordCount = StaffBook.Count;
+        lstStaff.Items.Clear();
+        while(Index < RecordCount)
+        {
+            StaffId = StaffBook.StaffList[Index].StaffId;
+            StaffLastName = StaffBook.StaffList[Index].StaffLastName;
+            ListItem NewEntry = new ListItem(StaffLastName + "", StaffId.ToString());
+            lstStaff.Items.Add(NewEntry);
+            Index++;
+        }
+        return RecordCount;
     }
 
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
-
+        DisplayFilterStaff(txtStaffLastName.Text);
     }
 }
