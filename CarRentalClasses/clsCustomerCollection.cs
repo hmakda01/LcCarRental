@@ -30,7 +30,6 @@ namespace CarRentalClasses
             DB.AddParameter("@CustomerTelephone", mThisCustomer.CustomerTelephone);
             DB.AddParameter("@CustomerAddress", mThisCustomer.CustomerAddress);
             DB.AddParameter("@CustomerEmail", mThisCustomer.CustomerEmail);
-            DB.AddParameter("@Active", mThisCustomer.Active);
             return DB.Execute("sproc_tblCustomer_Insert");
         }
 
@@ -64,7 +63,7 @@ namespace CarRentalClasses
         {
             
             clsDataConnection DB = new clsDataConnection();
-            DB.Execute("sproc_tblAddress_SelectAll");
+            DB.Execute("sproc_tblCustomer_SelectAll");
             PopulateArray(DB);
         }
 
@@ -82,12 +81,11 @@ namespace CarRentalClasses
             DB.AddParameter("@Username", mThisCustomer.Username);
             DB.AddParameter("@CustomerFirstName", mThisCustomer.CustomerFirstName);
             DB.AddParameter("@CustomerLastName", mThisCustomer.CustomerLastName);
-            DB.AddParameter("@CustomerTelephone", mThisCustomer.CustomerTelephone);
             DB.AddParameter("@CustomerAddress", mThisCustomer.CustomerAddress);
             DB.AddParameter("@CustomerEmail", mThisCustomer.CustomerEmail);
-            DB.AddParameter("@Active", mThisCustomer.Active);
+            DB.AddParameter("@CustomerTelephone", mThisCustomer.CustomerTelephone);
 
-            DB.Execute("sproc_tblCustomer_Upate");
+            DB.Execute("sproc_tblCustomer_Update");
 
         }
 
@@ -95,7 +93,7 @@ namespace CarRentalClasses
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Username", Username);
-            DB.Execute("sproc_tblCustomer_FilterByUsername");
+            DB.Execute("sproc_tblCustomer_filterByUsername");
             PopulateArray(DB);
         }
 
@@ -109,12 +107,11 @@ namespace CarRentalClasses
             {
                 clsCustomer ACustomer = new clsCustomer();
                 ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
-                ACustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
                 ACustomer.Username = Convert.ToString(DB.DataTable.Rows[Index]["Username"]);
-                ACustomer.CustomerFirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                ACustomer.CustomerLastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
-                ACustomer.CustomerEmail = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
-                ACustomer.CustomerTelephone = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNo"]);
+                ACustomer.CustomerFirstName = Convert.ToString(DB.DataTable.Rows[Index]["CustomerFirstName"]);
+                ACustomer.CustomerLastName = Convert.ToString(DB.DataTable.Rows[Index]["CustomerLastName"]);
+                ACustomer.CustomerEmail = Convert.ToString(DB.DataTable.Rows[Index]["CustomerEmail"]);
+                ACustomer.CustomerTelephone = Convert.ToString(DB.DataTable.Rows[Index]["CustomerTelephone"]);
 
                 mCustomerList.Add(ACustomer);
                 Index++;

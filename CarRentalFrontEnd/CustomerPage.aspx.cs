@@ -65,7 +65,7 @@ public partial class CustomerPage : System.Web.UI.Page
         }
         else
         {
-            lblError.Text = "There was a problem with teh data entered" + Error;
+            lblError.Text = "There was a problem with the data entered" + Error;
         }
     }
 
@@ -76,7 +76,6 @@ public partial class CustomerPage : System.Web.UI.Page
         String Error = customerCollection.ThisCustomer.Valid(txtUsername.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtEmail.Text, txtAddress.Text);
         if (Error == "")
         {
-            customerCollection.ThisCustomer.Find(CustomerID);
 
             customerCollection.ThisCustomer.Username = txtUsername.Text;
             customerCollection.ThisCustomer.CustomerFirstName = txtFirstName.Text;
@@ -90,7 +89,7 @@ public partial class CustomerPage : System.Web.UI.Page
         }
         else
         {
-            lblError.Text = "There was a problem with teh data entered" + Error;
+            lblError.Text = "There was a problem with the data entered" + Error;
         }
     }
 }

@@ -18,8 +18,8 @@ public partial class CustomerList : System.Web.UI.Page
 
     void DisplayCustomers()
     {
-        clsCustomerCollection Customers = new clsCustomerCollection();
-        lstCustomer.DataSource = Customers.CustomerList;
+        clsCustomerCollection Customer = new clsCustomerCollection();
+        lstCustomer.DataSource = Customer.CustomerList;
         lstCustomer.DataValueField = "CustomerID";
         lstCustomer.DataTextField = "Username";
         lstCustomer.DataBind();
@@ -38,7 +38,7 @@ public partial class CustomerList : System.Web.UI.Page
         {
             CustomerID = Convert.ToInt32(lstCustomer.SelectedValue);
             Session["CustomerID"] = CustomerID;
-            Response.Redirect("sproc_tblCustomer_Delete");
+            Response.Redirect("CustomerDelete.aspx");
         }
         else
         {

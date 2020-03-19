@@ -8,11 +8,6 @@ namespace CarRentalTest
     [TestClass]
     public class CustomerCollectionTest
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-
 
         [TestMethod]
         public void InstanceOK()
@@ -33,12 +28,11 @@ namespace CarRentalTest
             clsCustomer TestItem = new clsCustomer();
             //put in test data
             Int32 PrimaryKey = 0;
-            TestItem.Active = true;
-            TestItem.CustomerID = 4;
             TestItem.Username = "John123";
             TestItem.CustomerFirstName = "John";
             TestItem.CustomerLastName = "Smith";
             TestItem.CustomerEmail = "";
+            TestItem.CustomerAddress = "123 Some Street";
             TestItem.CustomerTelephone = "01163480420";
             AllCustomers.ThisCustomer = TestItem;
             PrimaryKey = AllCustomers.Add();
@@ -56,12 +50,11 @@ namespace CarRentalTest
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             clsCustomer TestItem = new clsCustomer();
             Int32 PrimaryKey = 0;
-            TestItem.Active = true;
-            TestItem.CustomerID = 1;
             TestItem.Username = "John123";
             TestItem.CustomerFirstName = "John";
             TestItem.CustomerLastName = "Smith";
             TestItem.CustomerEmail = "";
+            TestItem.CustomerAddress = "123 Some Street";
             TestItem.CustomerTelephone = "01163480420";
             AllCustomers.ThisCustomer = TestItem;
             PrimaryKey = AllCustomers.Add();
@@ -84,24 +77,22 @@ namespace CarRentalTest
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             clsCustomer TestItem = new clsCustomer();
             Int32 PrimaryKey = 0;
-            TestItem.Active = true;
-            TestItem.CustomerID = 1;
             TestItem.Username = "John123";
             TestItem.CustomerFirstName = "John";
             TestItem.CustomerLastName = "Smith";
             TestItem.CustomerEmail = "";
+            TestItem.CustomerAddress = "123 Some Street";
             TestItem.CustomerTelephone = "01163480420";
             AllCustomers.ThisCustomer = TestItem;
             PrimaryKey = AllCustomers.Add();
             //assign the data to the property
             TestItem.CustomerID = PrimaryKey;
             //
-            TestItem.Active = false;
-            TestItem.CustomerID = 2;
             TestItem.Username = "Stephen678";
             TestItem.CustomerFirstName = "Stephen";
             TestItem.CustomerLastName = "Coulade";
             TestItem.CustomerEmail = "fsdf@live.co.uk";
+            TestItem.CustomerAddress = "456 Different Street";
             TestItem.CustomerTelephone = "01557347020";
             //
             AllCustomers.ThisCustomer = TestItem;
