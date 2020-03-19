@@ -12,29 +12,21 @@ public partial class CarList : System.Web.UI.Page
     //this function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if this is the first time the page is displayed
-        CarID = Convert.ToInt32(Session["CarID"]);
+       
         if (IsPostBack == false)
         {
-            //update the list 
             DisplayCars();
-            //if this new record
-            if (CarID != -1)
-            {
-                //display the current data for the record
-                DisplayCars();
-            }
         }
     }
 
     void DisplayCars()
     {
         //create an instance of the county collection 
-        CarRentalClasses.clsCarCollection Cars = new CarRentalClasses.clsCarCollection();
+        clsCarCollection Cars = new clsCarCollection();
         //set the data source to the list of counties in the collection
         lstCars.DataSource = Cars.CarList;
         //set the name of the primariy key
-        lstCars.DataValueField = "CarId";
+        lstCars.DataValueField = "CarID";
         //set the data field to display
         lstCars.DataValueField = "RegPlate";
         //bind the data to the list
@@ -97,6 +89,7 @@ public partial class CarList : System.Web.UI.Page
     //bellow named car name but use for reg search because car list is reg
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
+        DisplayFilterRegPlate(lstCars.Text);
 
     }
 
@@ -107,6 +100,28 @@ public partial class CarList : System.Web.UI.Page
 
     protected void btnApply_Click(object sender, EventArgs e)
     {
+        DisplayFilterRegPlate(lstCars.Text);
+
+    }
+    Int32 DisplayFilterRegPlate(string RegPlateFilter)
+    {
+        Int32 CarID;
+        string RegPlate;
+        clsCarCollection CarBook = new clsCarCollection();
+        CarBook.ReportByRegPlate(RegPlateFilter);
+        Int32 RecordCount;
+        Int32 Index = 0;
+        RecordCount = CarBook.Count;
+        lstCars.Items.Clear();
+        while (Index < RecordCount)
+        {
+            CarID = CarBook.CarList[Index].CarID;
+            RegPlate = CarBook.CarList[Index].RegPlate;
+            ListItem NewEntry = new ListItem(RegPlate + "", CarID.ToString());
+            lstCars.Items.Add(NewEntry);
+            Index++;
+        }
+        return RecordCount;
 
     }
 }

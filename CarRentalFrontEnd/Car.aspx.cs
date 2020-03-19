@@ -12,13 +12,16 @@ public partial class Car : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (CarID == -1)
+        CarID = Convert.ToInt32(Session["CarID"]);
+        if (IsPostBack == false)
         {
-            Add();
-        }
-        else
-        {
-            Update();
+            DisplayCars();
+            if (CarID != -1)
+            {
+                DisplayCars();
+            }
+        
+        
         }
     }
 
@@ -29,18 +32,9 @@ public partial class Car : System.Web.UI.Page
 
     protected void btnOk_Click(object sender, EventArgs e)
     {
-        clsCar AnCar = new clsCar();
-        //capture the car name
-        AnCar.CarName = txtCarName.Text;
-        AnCar.CarModel = txtCarModel.Text;
-        AnCar.CarColour = txtColour.Text;
-        AnCar.EngineSize = txtEngineSize.Text;
-        AnCar.RegPlate = txtCarReg.Text;
-        AnCar.Price = Convert.ToInt32(txtPrice.Text);
-        //store car name i session object
-        Session["AnCar"] = AnCar;
-        //redirect to the viewr page
-        Response.Redirect("CarViewer.aspx");
+       
+      
+        Response.Redirect("CarList.aspx");
     }
 
     //function for adding new records 
@@ -62,8 +56,7 @@ public partial class Car : System.Web.UI.Page
             CarBook.ThisCar.Price = Convert.ToInt32(txtPrice.Text);
             //add the records
             CarBook.Add();
-            //all done so redirect back to the main page
-            Response.Redirect("CarList.aspx");
+            lblError.Text = "Success";
         }
         else
         {
@@ -116,5 +109,10 @@ public partial class Car : System.Web.UI.Page
         txtColour.Text = Carbook.ThisCar.CarColour;
         txtEngineSize.Text = Carbook.ThisCar.EngineSize;
         txtPrice.Text = Carbook.ThisCar.Price.ToString();
+    }
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Add();
     }
 }
