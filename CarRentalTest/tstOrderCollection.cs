@@ -27,7 +27,7 @@ namespace CarRentalTest
             TestItem.CustomerID = 1;
             TestItem.StaffID = 1;
             TestItem.CarID = 1;
-            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.Date = DateTime.Now.Date;
             TestItem.Email = "";
             TestItem.Price = 1;
             TestList.Add(TestItem);
@@ -45,7 +45,7 @@ namespace CarRentalTest
             TestItem.CustomerID = 1;
             TestItem.StaffID = 1;
             TestItem.CarID = 1;
-            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.Date = DateTime.Now.Date;
             TestItem.Email = "";
             TestItem.Price = 1;
             AllOrder.ThisOrder = TestItem;
@@ -66,7 +66,7 @@ namespace CarRentalTest
             TestItem.CustomerID = 1;
             TestItem.StaffID = 1;
             TestItem.CarID = 1;
-            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.Date = DateTime.Now.Date;
             TestItem.Email = "";
             TestItem.Price = 1;
             AllOrder.ThisOrder = TestItem;
@@ -88,7 +88,7 @@ namespace CarRentalTest
             TestItem.CustomerID = 1;
             TestItem.StaffID = 1;
             TestItem.CarID = 1;
-            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.Date = DateTime.Now.Date;
             TestItem.Email = "";
             TestItem.Price = 1;
             AllOrder.ThisOrder = TestItem;
@@ -98,7 +98,7 @@ namespace CarRentalTest
             TestItem.CustomerID = 2;
             TestItem.StaffID = 2;
             TestItem.CarID = 2;
-            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.Date = DateTime.Now.Date;
             TestItem.Email = "";
             TestItem.Price = 2;
             AllOrder.ThisOrder = TestItem;
@@ -107,8 +107,8 @@ namespace CarRentalTest
             Assert.AreEqual(AllOrder.ThisOrder, TestItem);
 
         }
-         [TestMethod]
-         public void ReportByEmailMethodOK()
+        [TestMethod]
+        public void ReportByEmailMethodOK()
         {
             clsOrderCollection AllOrder = new clsOrderCollection();
             clsOrderCollection FilteredOrder = new clsOrderCollection();
@@ -145,34 +145,16 @@ namespace CarRentalTest
             else
             { OK = false; }
             Assert.IsTrue(OK);
+        }
+
+    }
+}
 
 
 
+    
 
-
-
-
-
-
-
-
-
-            }
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            }
+    
        
 
 
@@ -181,7 +163,7 @@ namespace CarRentalTest
 
 
 
-    }
+    
 
 
 

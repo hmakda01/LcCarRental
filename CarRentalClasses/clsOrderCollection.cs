@@ -71,11 +71,11 @@ namespace CarRentalClasses
             DB.AddParameter("@CustomerID", mThisOrder.CustomerID);
             DB.AddParameter("@StaffID", mThisOrder.StaffID);
             DB.AddParameter("@CarID", mThisOrder.CarID);
-            DB.AddParameter("@Date", mThisOrder.DateAdded);
+            DB.AddParameter("@Date", mThisOrder.Date);
             DB.AddParameter("@Email", mThisOrder.Email);
             DB.AddParameter("@Price", mThisOrder.Price);
             //execute the query returning the primary key value
-            return DB.Execute("sproc_tblOrder_");
+            return DB.Execute("sproc_tblOrder_Insert");
 
 
 
@@ -95,7 +95,7 @@ namespace CarRentalClasses
             DB.AddParameter("@CustomerID", mThisOrder.CustomerID);
             DB.AddParameter("@StaffID", mThisOrder.StaffID);
             DB.AddParameter("@CarID", mThisOrder.CarID);
-            DB.AddParameter("@Date", mThisOrder.DateAdded);
+            DB.AddParameter("@Date", mThisOrder.Date);
             DB.AddParameter("@Email", mThisOrder.Email);
             DB.AddParameter("@Price", mThisOrder.Price);
             //execute the query returning the primary key value
@@ -126,7 +126,7 @@ namespace CarRentalClasses
             AnOrder.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
             AnOrder.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);
             AnOrder.CarID = Convert.ToInt32(DB.DataTable.Rows[Index]["CarID"]);
-            AnOrder.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateAdded"]);
+            AnOrder.Date = Convert.ToDateTime(DB.DataTable.Rows[Index]["Date"]);
             AnOrder.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
             AnOrder.Price = Convert.ToInt32(DB.DataTable.Rows[Index]["Price"]);
             mOrderList.Add(AnOrder);
